@@ -1,3 +1,4 @@
+
 class Patient
 
   attr_accessor :name, :appointment, :doctor
@@ -13,7 +14,9 @@ class Patient
   end
 
   def appointments
-    Appointment.all.select {|appointment| appointment.patient == self}
+    Appointment.all.select do |appointment| 
+      appointment.patient.name == self.name
+    end
   end
 
   def doctors
@@ -21,6 +24,6 @@ class Patient
   end
 
   def new_appointment(doctor, date)
-    Appointment.new(self, date, doctor)
+    Appointment.new(self, doctor, date)
   end
-end
+end 

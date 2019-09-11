@@ -21,8 +21,8 @@ describe 'Doctor' do
       doctor_who = Doctor.new('The Doctor')
       doctor_smith = Doctor.new('Matt Smith')
       hevydevy = Patient.new('Devin Townsend')
-      appointment = Appointment.new('Friday, January 32nd', hevydevy, doctor_who)
-      appointment_2 = Appointment.new('Saturday, January 33rd', hevydevy, doctor_smith)
+      appointment = Appointment.new(hevydevy, doctor_who, 'Friday, January 32nd')
+      appointment_2 = Appointment.new(hevydevy, doctor_smith, 'Saturday, January 33rd')
       
       expect(doctor_who.appointments).to include(appointment)
       expect(doctor_smith.appointments).to include(appointment_2)
